@@ -1,11 +1,15 @@
 import "./App.css";
 import Header from "./components/Header";
+import HeroSection from "./components/HeroSection";
+import Skills from "./components/Skills";
 
 function App() {
 	return (
-		<div>
+		<>
 			<Header />
-		</div>
+			<HeroSection />
+			<Skills />
+		</>
 	);
 }
 

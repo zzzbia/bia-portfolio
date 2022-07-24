@@ -1,38 +1,447 @@
-.App {
-  text-align: center;
+/* Root Selector */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&family=Lato:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,700;1,800&family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+  /* declare a variable with `--` syntax */
+  --dark: #1F2041;
+  --blue: #2C5FF6;
+  --pink: #ED99C9;
+  --white: #ffffff;
+  --border-round: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+body {
+  overflow-x: clip;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1236px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Base Section Dimensions*/
+section {
+  margin: 0 auto;
+  max-width: 1236px;
+}
+
+/* Header h1 style, Logo */
+header h1 {
+  font-family: 'Roboto', 'Poppins', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 75px;
+  color: var(--dark);
+
+}
+
+/* Navigation anchor */
+nav a {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 191.25%;
+  /* or 57px */
+  letter-spacing: -0.01em;
+  color: var(--dark);
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+nav a:hover {
+  color: var(--blue);
+}
+
+/* Hero Container Styles */
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0px 8px;
+
+}
+
+.hero-content {
+  flex-shrink: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  max-width: 600px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.hero-content h1 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 65px;
+  line-height: 111.5%;
+  /* or 72px */
+  letter-spacing: -0.01em;
+  color: var(--dark);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.hero-content h2 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 170%;
+  /* identical to box height, or 31px */
+  letter-spacing: -0.01em;
+  margin-top: 20px;
+  color: var(--dark);
+}
+
+.hero-content a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 161px;
+  padding: 15.673px 26.8679px;
+  background: var(--blue);
+  box-shadow: 0px 13.434px 39.1824px rgba(21, 76, 238, 0.21);
+  border-radius: 12px;
+  font-family: 'Poppins', 'Roboto', 'Poppins', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height */
+  text-align: right;
+  text-decoration: none;
+  color: var(--white);
+  margin-top: 20px;
+}
+
+.hero-content a:hover {
+  background: transparent;
+  outline: 1px solid var(--blue);
+  color: var(--dark);
+  box-shadow: 0px 13.434px 39.1824px rgba(21, 76, 238, 0.21);
+}
+
+.hero-image {
+  width: 30%;
+  min-width: 600px;
+  height: auto;
+}
+
+.skills-section {
+  display: flex;
+  flex-direction: row;
+  margin: 50px auto;
+  flex-wrap: wrap;
+}
+
+.skills {
+  flex: 1 1 200px;
+  position: relative;
+  background-color: var(--pink);
+  height: 100%;
+  width: 90%;
+  margin-right: 20px;
+  display: inline-flex;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+/* Adds hover opacity to skills */
+.skills:hover {
+  opacity: 0.9;
+}
+
+.skills img {
+  margin-top: -50px;
+}
+
+.skills h1 {
+
+  font-family: 'Poppins', 'Roboto', 'Poppins', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 191.25%;
+  /* or 57px */
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+
+
+.skills img {
+  max-width: 50%;
+}
+
+.about-section {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.about-image {
+  min-width: 400px;
+  height: auto;
+}
+
+
+.about-content {
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  justify-content: center;
+  margin: 10px;
+}
+
+.about-content h1 {
+  font-family: 'Poppins', 'Roboto', 'Poppins', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 191.25%;
+  /* identical to box height, or 115px */
+  letter-spacing: -0.01em;
+  color: var(--pink);
+}
+
+.about-content h2 {
+
+  font-family: 'Poppins', 'Roboto', 'Poppins', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 170%;
+  /* identical to box height, or 31px */
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+  color: var(--dark);
+
+}
+
+p {
+  font-family: 'Poppins', 'Roboto', 'Poppins', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 191.25%;
+  /* or 33px */
+  letter-spacing: -0.01em;
+  color: var(--dark);
+  margin: 8px auto;
+
+}
+
+/* .work-section {} */
+
+.work-section h2 {
+  font-family: 'Poppins', 'Roboto', 'Poppins', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 191.25%;
+  /* or 115px */
+  letter-spacing: -0.01em;
+  color: var(--pink);
+}
+
+.work {
+  position: relative;
+  margin: 0 auto;
+}
+
+.work a {
+  position: absolute;
+  bottom: 55px;
+  left: 35px;
+  font-family: 'Poppins', 'Roboto', 'Poppins', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 191.25%;
+  letter-spacing: -0.01em;
+  color: var(--pink);
+  background-color: var(--white);
+  padding: 10px;
+  border-radius: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.work a:hover {
+  outline: 1px solid var(--blue);
+  color: var(--dark);
+}
+
+.work:hover {
+  opacity: 0.9;
+}
+
+/* .work.full {} */
+
+.work.half {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px auto;
+  flex-wrap: wrap;
+}
+
+
+.full img {
+  min-width: 100%;
+}
+
+.work.thirds {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Makes work thirds container half visible on  hover */
+/* .work :hover {
+    opacity: 0.9;
+} */
+
+/* Contact Section  */
+footer {
+  background: rgba(44, 95, 246, 0.23);
+  width: 100%;
+  bottom: 0;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.contact-content {
+  width: 100%;
+  margin: 20px auto;
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  justify-content: center;
+}
+
+.contact-content h1 {
+  font-family: 'Poppins', 'Roboto', 'Poppins', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 191.25%;
+  /* identical to box height, or 115px */
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+
+.contact-content h1:hover {
+  text-decoration: underline double rgba(44, 95, 246, 0.30);
+}
+
+.contact-content a {
+  font-family: 'Poppins', 'Roboto', 'Poppins', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 170%;
+  /* identical to box height, or 31px */
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+  color: #1F2041;
+  text-decoration: none;
+}
+
+.contact-content a:hover {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.footer-image {
+  align-content: space-between;
+}
+
+/* Media Query Resizing */
+@media screen and (max-width: 768px) {
+
+  main,
+  nav {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  header h1 {
+    font-size: 40px;
   }
+
+  nav a {
+    font-size: 18px;
+  }
+
+  .hero-content h1 {
+    font-size: 50px;
+  }
+
+  /* paragraph style for the About Section */
+  p {
+    margin: 10px auto;
+  }
+
+  .work {
+    margin: 8px auto;
+  }
+
+  .work-section h2 {
+    text-align: center;
+  }
+
+  .about-content h1 {
+    text-align: center;
+  }
+
+  .work img {
+    max-width: 90vw;
+  }
+
+  .work a {
+    position: absolute;
+    bottom: 50px;
+    left: 25px;
+    font-size: 20px;
+  }
+
+  section {
+    padding: 0px 4px;
+  }
+
+  footer {
+    background: rgba(44, 95, 246, 0.23);
+    min-width: 100vw;
+    bottom: 0;
+    overflow-x: hidden;
+  }
+
+  main {
+    overflow-x: clip;
+  }
+
+
+  .skills {
+    margin-top: 40px;
+  }
+
 }
