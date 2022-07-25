@@ -5,7 +5,11 @@ module.exports = {
 		colors: {
 			primary: "#2C5FF6",
 		},
-		extend: {},
+		extend: {
+			fontFamily: {
+				poppins: ["Poppins", "sans-serif"],
+			},
+		},
 	},
 	plugins: [],
 };
