@@ -1,17 +1,45 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
-function Navigation() {
+const Navigation = () => {
+	const location = useLocation();
+
+	console.log(location.pathname);
+
+	const navItems = [
+		{
+			name: "About",
+			path: "/",
+		},
+		{
+			name: "Skills",
+			path: "/skills",
+		},
+		{
+			name: "Projects",
+			path: "/projects",
+		},
+		{
+			name: "Contact",
+			path: "/contact",
+		},
+	];
+
 	return (
-		<header>
-			<h1>Rabia Saeed</h1>
-			<nav>
-				<a href="#skills">Skills</a>
-				<a href="#about">About</a>
-				<a href="#work">Work</a>
-				<a href="#contact">Contact</a>
-			</nav>
-		</header>
+		<nav>
+			{navItems.map((item) => (
+				<a
+					className={
+						location.pathname === item.path ? "underline text-primary" : ""
+					}
+					key={item.name}
+					href={item.path}
+				>
+					{item.name}
+				</a>
+			))}
+		</nav>
 	);
-}
+};
 
 export default Navigation;
