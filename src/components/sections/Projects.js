@@ -1,29 +1,72 @@
 import React from "react";
+import Project from "../Project";
+import { SimpleGrid } from "@chakra-ui/react";
 
 const Projects = () => {
 	const myProjects = [
 		{
-			id: 1,
 			title: "Toronto event finder",
+			github: "https://benbasic.github.io/Toronto-Event-Finder",
+			live: "https://benbasic.github.io/Toronto-Event-Finder",
+			image: "images/Torontoevent.png",
+			description:
+				"A Toronto event finder app that allows users to search for events by category and location.",
+			skills: "HTML, JS, Express",
+			isDeployed: true,
+		},
+		{
+			title: "Toronto event finder",
+			github: "https://benbasic.github.io/Toronto-Event-Finder",
+			live: "https://benbasic.github.io/Toronto-Event-Finder",
+			image: "images/Torontoevent.png",
+			description:
+				"A Toronto event finder app that allows users to search for events by category and location.",
+
+			skills: "HTML, JS, Express",
+			isDeployed: true,
+		},
+		{
+			title: "Toronto event finder",
+			github: "https://benbasic.github.io/Toronto-Event-Finder",
+			live: "https://benbasic.github.io/Toronto-Event-Finder",
+			image: "images/Torontoevent.png",
+			description:
+				"A Toronto event finder app that allows users to search for events by category and location.",
+
+			skills: "HTML, JS, Express",
+
+			isDeployed: false,
+		},
+		{
+			title: "Toronto event finder",
+			github: "https://benbasic.github.io/Toronto-Event-Finder",
+			live: "",
+			image: "images/Torontoevent.png",
+			description:
+				"A Toronto event finder app that allows users to search for events by category and location.",
+
+			skills: "HTML, JS, Express",
+			isDeployed: false,
 		},
 	];
 
 	return (
 		<section className="work-section" id="work">
-			<h2>My Work</h2>
-
-			<div className="work full">
-				<a
-					className="work-link"
-					href="https://benbasic.github.io/Toronto-Event-Finder/"
-				>
-					Toronto Event Finder
-				</a>
-				<img
-					src="/images/Torontoevent.png"
-					alt=" bright led lights toronto sign concert venue"
-				/>
-			</div>
+			<SimpleGrid columns={2} spacing={8}>
+				{myProjects.map((project) => {
+					return (
+						<Project
+							title={project.title}
+							github={project.github}
+							live={project.live}
+							image={project.image}
+							skills={project.skills}
+							isDeployed={project.isDeployed}
+							description={project.description}
+						/>
+					);
+				})}
+			</SimpleGrid>
 		</section>
 	);
 };
