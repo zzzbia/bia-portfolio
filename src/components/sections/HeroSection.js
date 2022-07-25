@@ -18,6 +18,10 @@ const headings = {
 		heading: "Let's get in touch",
 		subHeading: "Feel free to contact me below",
 	},
+	resume: {
+		heading: "Download my resume",
+		subHeading: "",
+	},
 };
 
 const HeroSection = () => {
@@ -26,6 +30,7 @@ const HeroSection = () => {
 	const [heading, setHeading] = useState(headings.about.heading);
 	const [subHeading, setSubHeading] = useState(headings.about.subHeading);
 	const [showContactBtn, setShowContactBtn] = useState(true);
+	const [showDownloadResumeBtn, setShowDownloadResumeBtn] = useState(false);
 
 	useEffect(() => {
 		if (location.pathname === "/") {
@@ -48,6 +53,12 @@ const HeroSection = () => {
 			setHeading(headings.projects.heading);
 			setSubHeading(headings.projects.subHeading);
 		}
+		if (location.pathname === "/resume") {
+			setHeading(headings.resume.heading);
+			setSubHeading(headings.resume.subHeading);
+			setShowDownloadResumeBtn(true);
+			setShowContactBtn(false);
+		}
 	}, [location.pathname]);
 
 	return (
@@ -56,6 +67,13 @@ const HeroSection = () => {
 				<h1>{heading}</h1>
 				<h2>{subHeading}</h2>
 				{showContactBtn ? <a href="/contact">Contact Me</a> : ""}
+				{showDownloadResumeBtn ? (
+					<a href="/resume.pdf" download>
+						Download
+					</a>
+				) : (
+					""
+				)}
 			</div>
 			<img
 				src="/images/celebrate.png"

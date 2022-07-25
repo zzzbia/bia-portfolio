@@ -23,6 +23,10 @@ const Navigation = () => {
 			name: "Contact",
 			path: "/contact",
 		},
+		{
+			name: "Resume",
+			path: "/resume",
+		},
 	];
 
 	return (
