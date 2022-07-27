@@ -8,7 +8,7 @@ const Projects = () => {
 			title: "Toronto event finder",
 			github: "https://benbasic.github.io/Toronto-Event-Finder",
 			live: "https://benbasic.github.io/Toronto-Event-Finder",
-			image: "images/torontoevent.png",
+			image: "images/toronto-event.png",
 			description:
 				"A Toronto event finder app that allows users to search for events by category and location.",
 			skills: "HTML, CSS, Tailwind, JS, Mapbox API, Ticketmaster API",
